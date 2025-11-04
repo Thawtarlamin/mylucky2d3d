@@ -1,0 +1,24 @@
+{
+  "name": "mylucky2d3d",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "scrape": "node index.js",
+    "server": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.13.1",
+    "cheerio": "^1.1.2",
+    "express": "^5.1.0",
+    "node-cron": "^4.2.1",
+    "puppeteer": "^24.28.0"
+  }
+}
