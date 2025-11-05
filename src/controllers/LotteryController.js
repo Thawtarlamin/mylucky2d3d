@@ -1,6 +1,7 @@
 const LotteryData = require('../models/LotteryData');
 const ScraperService = require('../services/ScraperService');
 const ConsoleView = require('../views/ConsoleView');
+const axios = require('axios');
 
 // Lottery Controller - Handles business logic
 class LotteryController {
@@ -16,16 +17,18 @@ class LotteryController {
 
             // Scrape data using service
             const rawData = await this.scraperService.scrape();
-
+            const {data} = await axios.get('https://api.thaistock2d.com/live');
             // Create model instance
             this.lotteryData = new LotteryData();
 
             // Populate model with scraped data
             this.lotteryData.setTitle(rawData.title);
             this.lotteryData.setDate(rawData.date);
-            this.lotteryData.setLiveNumber(rawData.liveNumber);
-            this.lotteryData.setUpdatedTime(rawData.updatedTime);
-            
+            this.lotteryData.setLiveNumber(data.live.twod || '');
+            this.lotteryData.setUpdatedTime(data.live.time || '');
+            this.lotteryData.setLiveSet(data.live.set || '');
+            this.lotteryData.setLiveValue(data.live.value || '');
+
             this.lotteryData.setAmData(
                 rawData.am.result,
                 rawData.am.set,

@@ -4,6 +4,8 @@ class LotteryData {
         this.title = '';
         this.date = '';
         this.liveNumber = '';
+        this.liveSet = '';
+        this.liveValue = '';
         this.updatedTime = '';
         this.am = {
             time: '12:01 AM',
@@ -46,6 +48,16 @@ class LotteryData {
         this.liveNumber = liveNumber;
     }
 
+    //Set live set
+    setLiveSet(liveSet) {
+        this.liveSet = liveSet;
+    }
+
+    //Set live value
+    setLiveValue(liveValue) {
+        this.liveValue = liveValue;
+    }
+
     // Set updated time
     setUpdatedTime(updatedTime) {
         this.updatedTime = updatedTime;
@@ -83,6 +95,8 @@ class LotteryData {
             title: this.title,
             date: this.date,
             liveNumber: this.liveNumber,
+            liveSet: this.liveSet,
+            liveValue: this.liveValue,
             updatedTime: this.updatedTime,
             am: this.am,
             pm: this.pm,

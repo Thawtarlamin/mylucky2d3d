@@ -38,6 +38,8 @@ class ScraperService {
                 title: '',
                 date: '',
                 liveNumber: '',
+                liveSet: '',
+                liveValue: '',
                 updatedTime: '',
                 am: { result: '', set: '', value: '' },
                 pm: { result: '', set: '', value: '' },
